@@ -1,0 +1,538 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ POLICE D'ECRITURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@font-face {
+font-family: 'Roboto';
+src: url('fonts/Roboto-Regular.eot') format('eot'),
+     url('fonts/Roboto-Regular.ttf') format('ttf'),
+     url('fonts/Roboto-Regular.woff') format('woff'),
+     url('fonts/Roboto-Regular.svg') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BODY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+body {
+    
+    font-family: 'Roboto', sans-serif;
+    color: rgb(119,119,119);
+    margin: 0;
+    padding: 0;
+    font-size: 1em;                       
+    width: 100%;  
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Menu Fixe qui suit la navigation */
+header {
+    position: fixed;
+    display: flex;
+    z-index: 20;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background: white;
+    top:0;
+    overflow: hidden;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+}
+
+header a {
+    padding: 0px 10px;
+    text-decoration: none;
+    color: rgb(80,80,80);
+}
+
+ul a:hover { 
+    border-top: 3px solid rgb(90,170,210);
+    padding-top: 35px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  SLIDER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#slider
+{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    top: 100px;
+
+}
+
+.slide {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    left: 0;
+    text-align: left;
+    animation: 10s sliding infinite;
+}
+
+.slide img {
+    width: 20%;
+    height: auto; 
+}
+
+@keyframes sliding {
+    0% { left: 0%; }
+    25% { left: 0%; }
+    50% { left: -100%; }
+    75% { left: -100%; }
+    100% { left: 0%; }
+}
+
+#slider  {
+    width: 100%;
+    margin:   0;
+
+}
+
+#chevrons {
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+}
+
+#chevron-gauche {
+    position: absolute;
+    top: 50%;
+    left: -27px;
+    color: #fff;
+    font-size: 1.8em;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 20px 20px 5px;
+    cursor: pointer; 
+}
+
+#chevron-gauche i{
+    margin-left: 25px;
+}
+
+#chevron-droit {
+    position: absolute;
+    top: 50%;
+    right: -27px;
+    color: #fff;
+    font-size: 1.8em;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 5px 20px 20px;
+    cursor: pointer;
+}
+
+#chevron-droit i{
+    margin-right: 25px;
+}
+
+.blue_bar{
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    background-color: #5CADD3;
+    height: 1%;
+    animation: animationbarre 10s ease infinite;
+}
+
+@keyframes animationbarre {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+
+/* Texte slider */
+h1 {
+    color: white;
+}
+
+h1, h2 {
+    font-size: 2.6em;  
+}
+
+h2, h3 {
+    color: rgb(39,39,39);
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px; 
+}
+
+.text_slide {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    color: #fff;
+    width: 50%;
+}
+
+.text_slide p h1{
+     margin-bottom: 40px;    
+}
+
+.text_slide h1 span {
+    color: rgb(92,173,211);
+}
+
+
+/* Effet bouton plus d'info */
+.text_slide a { 
+    color: white;
+    padding: 10px 15px;
+    background-color: rgb(92,173,211);
+    border-radius: 3px;
+    border-bottom: 3px solid rgb(68,148,187);
+    text-decoration: none;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  SERVICES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#services { /*section services*/
+    padding-top: 165px;
+    padding-bottom: 190px;
+}
+
+.section_header{ /*titre et sous titre*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.section_header p{
+    padding-bottom:  40px;
+}
+.trait {
+    position: absolute;
+    width: 130px; /*largeur de la ligne*/
+    border-bottom: 1px solid #ddd;/*epaisseur de la ligne*/
+}
+
+.blue_circle /*bulle bleu*/{
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: #5CADD3;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#services_body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.services_img img{
+    width: 100%;        
+}
+
+.services_description {
+    display: flex;
+}
+
+.services_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrer le logo fontawesome */
+    height: 55px;
+    width: 55px;
+    min-width: 60px; /* Eviter aplatissement face au texte */
+    margin-top: 55px;
+    padding-top: 5px; /* Centrer le logo fontawesome */
+    border-radius: 50%;
+    border: 1px solid rgb(217,217,217);
+    color: rgb(92,173,211);
+    font-size: 1.6em;
+}
+
+.services_description .blue_circle {
+    margin-top: 72px;
+    margin-left: 45px;
+
+}
+
+.services_text {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  PROJETS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#projets {
+    background-color: rgb(245,245,245);
+    padding-top: 165px;
+    padding-bottom: 230px;
+}
+
+#services .section_header {
+    margin-bottom: 50px;
+}
+
+#projets ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+} 
+
+#projets li {
+    padding: 11px 10px;
+    background-color: rgb(229,229,229);
+    transition: background-color 1s, color 1s;
+}
+
+nav .nav_menu li i {
+    position: absolute;
+    top: 36px;
+    left: 45%;
+    color: #4494bb; 
+    padding: 0; 
+    margin: 0; 
+}
+
+#projets .select, #projets li:hover  {
+    background-color: rgb(92,173,211);
+    color: white;
+    font-weight: 300;
+    border-bottom: 4px solid rgb(70,140,173);
+    position: relative;
+    cursor: pointer;
+}
+
+#all_works { /* bordure arrondie */
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#portfolio {  /* bordure arrondie */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#projets_nav { /* menu projets */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.projets_album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 85%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.projets_album figure img {
+    width: 100%;
+}
+
+.projets_album figure { 
+    position: relative; /* Positionnement de la légende au survol */
+    overflow: hidden; 
+    height: 250px;
+    width: 250px;
+}
+
+figcaption { 
+    position: absolute; 
+    width: 100%;
+    padding: 0 10px;
+    background: rgba(0,0,0,0.4); 
+    color: white; 
+    opacity: 0; 
+}
+
+figure:hover figcaption {
+    opacity: 1;
+    bottom: 82px;
+}
+
+figcaption .blue_eye { /* Bulle bleue avec logo oeil*/
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    left: 70%;
+    top: -20px;
+    background-color: rgb(69,144,177);
+    border-radius:50%;
+    border: 2px solid white; 
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  CONTACT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#contact {
+    position: relative;
+}
+    
+.google_maps, #conteneur_contact {
+    width: 100%;
+    position: absolute;
+    height: 600px;
+    margin: 0;
+    border: 0px;
+}
+
+
+#conteneur_contact {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgba(92,173,211, .5);
+    pointer-events: none;
+
+}
+
+/* Formulaire de contact */
+form { 
+    width: 300px;
+    height: 70%;
+    margin: 40px 150px;
+    padding: 20px; 
+    padding-right: 30px;
+    background-color: rgba(255,255,255, .8);
+    pointer-events: auto;
+}
+
+form h2 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 180%;
+}
+
+input {
+    width: 100%;
+    height: 25px;
+    border-radius: 3%;
+    margin-bottom: 15px;
+    padding-left: 10px; 
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    border-radius: 3%;
+    margin-bottom: 15px;
+    padding-left: 10px; 
+}
+
+.bouton {
+    padding: 5px 15px;
+    color: white;
+    background-color: rgb(92,173,211); 
+    border-bottom: 3px solid rgb(70,140,173);
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Responsive Web Design ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media all and (max-width: 1024px) {
+	.text_slide {
+		position: relative;
+		text-align: center;
+		left: 25%;
+		margin-top: 10%;
+	}
+	#chevrons, .slide, .blue_bar {
+		display: none;
+	}
+    h1 {
+        color: black;
+    }
+    #services_body {
+        flex-wrap: wrap; /* Présentation des services en colonnes */
+    }
+    .google_maps, #conteneur_contact {
+        position: relative;
+    }
+    #conteneur_contact {
+        background-color: rgb(245,245,245);
+    }  
+    form {
+        margin: 0;
+        width: 100%; /* Adaptation formulaire de contact */
+        height: 75%;
+    }
+}
+@media all and (max-width: 768px) {
+	header {
+		justify-content: center; /* Centrage du logo Webagency */
+	}
+    nav ul {
+        display: none; /* Suppression du menu complet */
+    }
+    #logo_webagency, #logo_webagency img {
+        max-width: 320px; /* Adaptation taille du logo du menu principal */
+    }
+    .text_slide {
+		font-size: 80%;
+	}
+	h1 span {
+		font-size: 95%;
+	}
+	#projets_nav {
+		font-size: 125%;
+	}
+    nav#projets_nav li i {
+        bottom: -16px;
+    }
+	.projets_album figure img { 
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.projets_album figure {
+		width: 175%;
+		height: 175%;
+	}
+	figure:hover figcaption {
+    	opacity: 1;
+    	bottom: 0px;
+	}
+}
+@media all and (max-width: 425px) {
+	#projets_nav {
+		font-size: 125%;
+    }
+    nav#projets_nav li i {
+        bottom: -13px;
+    }
+}
+@media all and (max-width: 375px) {
+    #projets_nav {
+        font-size: 100%;
+    }
+    .text_slide {
+		font-size: 65%;
+	}
+}
+@media all and (max-width: 320px) {
+    #projets_nav {
+        font-size: 90%;
+    }
+    nav#projets_nav li i {
+        bottom: -11px;
+    }
+}
